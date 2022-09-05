@@ -1,7 +1,7 @@
 #ifndef __SENDER_H_
 #define __SENDER_H_
-#include "temperature.h"
-#include "state_of_charge.h"
+#include "sensor/temperature.h"
+#include "sensor/state_of_charge.h"
 #include <vector>
 
 #define READINGS_IN_STREAM  (50)
