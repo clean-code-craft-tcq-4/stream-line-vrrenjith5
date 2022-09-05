@@ -1,9 +1,10 @@
 #define CATCH_CONFIG_MAIN
+#include "test/catch.hpp"
 #include <iostream>
 #include "sensor/temperature.h"
 #include "sensor/state_of_charge.h"
 #include "sender.h"
-#include "test/catch.hpp"
+
 
 using namespace std;
 
