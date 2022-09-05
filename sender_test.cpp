@@ -4,7 +4,7 @@
 #include "sensor/temperature.h"
 #include "sensor/state_of_charge.h"
 #include <vector>
-#include "sender.h"
+#include "sender/sender.h"
 
 using namespace std;
 
