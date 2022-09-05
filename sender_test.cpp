@@ -1,8 +1,8 @@
 #define CATCH_CONFIG_MAIN
 #include "test/catch.hpp"
 #include <iostream>
-#include "sensor/temperature.h"
-#include "sensor/state_of_charge.h"
+#include "temperature.h"
+#include "state_of_charge.h"
 #include "sender.h"
 
 
