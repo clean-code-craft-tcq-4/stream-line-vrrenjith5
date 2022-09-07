@@ -8,7 +8,7 @@
 using namespace std;
 
 bool sendSensorDataToConsole(){
-  bool isDataSendSuccessfully;
+  bool isDataSendSuccessfully = false;
   vector<int> temperatureValues = generateTemperatureValues(TEMPERATURE_MAX_VALUE ,TEMPERATURE_MIN_VALUE, READINGS_IN_STREAM);
   vector<int> socValues = generateSocValues(SOC_MAX_VALUE ,SOC_MIN_VALUE, READINGS_IN_STREAM);
 
@@ -17,9 +17,6 @@ bool sendSensorDataToConsole(){
       cout<<temperatureValues[counter]<<", "<<socValues[counter]<<endl;
     }
     isDataSendSuccessfully = true;
-  }
-  else {
-    isDataSendSuccessfully = false;
   }
   return isDataSendSuccessfully;
 }
