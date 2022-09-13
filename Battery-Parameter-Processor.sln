@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BatteryParametersReceiver", "BatteryParametersReceiver\BatteryParametersReceiver.csproj", "{CD01020A-D225-4CBB-BD8F-F062EB2BF3A8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BatteryParametersReceiver", "Receiver\BatteryParametersReceiver.csproj", "{CD01020A-D225-4CBB-BD8F-F062EB2BF3A8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BatteryParametersReceiver.Test", "BatteryParametersReceiver.Test\BatteryParametersReceiver.Test.csproj", "{4179AE03-D653-46FA-9DA2-3D907CF9C10A}"
 EndProject
