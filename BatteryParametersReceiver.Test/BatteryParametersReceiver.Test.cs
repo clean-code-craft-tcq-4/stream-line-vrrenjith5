@@ -1,4 +1,4 @@
-using Sysytem;
+using System;
 using System.Collections.Generic;
 
 namespace BatteryParametersReceiver.Test
