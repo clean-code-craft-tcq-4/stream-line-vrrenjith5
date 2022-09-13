@@ -5,6 +5,6 @@
 
 using namespace std;
 
-bool sendSensorDataToConsole();
+bool sendSensorDataToConsole(vector<int> temperatureValues, vector<int> stateOfChargeValues);
 
 #endif /*__SENDER_H_ */
