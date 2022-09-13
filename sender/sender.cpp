@@ -13,7 +13,7 @@ bool sendSensorDataToConsole(){
   vector<int> socValues = generateSocValues(SOC_MAX_VALUE ,SOC_MIN_VALUE, READINGS_IN_STREAM);
 
   if((temperatureValues.size() == READINGS_IN_STREAM) && (socValues.size() == READINGS_IN_STREAM)) {
-    cout<<"temperature, soc"<<endl;
+    cout<<"Temperature, SOC"<<endl;
     for (int counter = 0; counter < READINGS_IN_STREAM; counter++) {
       cout<<temperatureValues[counter]<<", "<<socValues[counter]<<endl;
     }
