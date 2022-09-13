@@ -2,12 +2,12 @@
 #define __STATE_OF_CHARGE_H_
 #include <vector>
 
-#define SOC_MIN_VALUE   (0)
-#define SOC_MAX_VALUE   (100)
+#define STATE_OF_CHARGE_MIN_VALUE   (0)
+#define STATE_OF_CHARGE_MAX_VALUE   (100)
 
 using namespace std;
 
-vector<int> generateSocValues(int socMaxValue, int socMinValue, int numberOfReadings);
+vector<int> getStateOfChargeValues(int stateOfChargeMaxValue, int stateOfChargeMinValue, int numberOfReadings);
 
 #endif /*__STATE_OF_CHARGE_H_ */
 

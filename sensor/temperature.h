@@ -7,7 +7,7 @@
 
 using namespace std;
 
-vector<int> generateTemperatureValues(int teperatureMaxValue, int teperatureMinValue, int numberOfReadings);
+vector<int> getTemperatureValues(int temperatureMaxValue, int temperatureMinValue, int numberOfReadings);
 
 #endif /*__TEMPERATURE_H_ */
 
