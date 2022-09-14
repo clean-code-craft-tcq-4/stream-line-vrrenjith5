@@ -5,7 +5,7 @@ namespace BatteryParametersReceiver
 {
     public class BatteryDataReceiver
     {
-        public string DisplayData()
+        public static string DisplayData()
         {        
             Console.WriteLine("Hello");
             string str=Console.ReadLine();
