@@ -8,9 +8,10 @@ namespace BatteryParametersReceiver
         public static string DisplayData()
         {        
             Console.WriteLine("Hello");
-            string str=Console.ReadLine();
-            Console.WriteLine(str);
-            Console.ReadLine();
+            string str=Convert.ToString(Console.ReadLine());
+            if(str==null)                         
+                str="Empty String";
+            Console.WriteLine(str);            
             return str;
         }
     }
