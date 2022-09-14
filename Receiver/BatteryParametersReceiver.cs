@@ -5,4 +5,5 @@ namespace BatteryParametersReceiver
 {
     string str=Console.ReadLine();
     Console.WriteLine(str);
+    Console.ReadLine();
 }
