@@ -9,6 +9,6 @@ namespace BatteryParametersReceiver.Test
       public void ValidateDisplayedData()
       {
         string result=BatteryDataReceiver.DisplayData();
-        Assert.Equal(result,"Hello");                        
+        Assert.Equal("Hello",result);                        
       }
 }
