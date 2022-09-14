@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BatteryParametersReceiver\BatteryParametersReceiver.csproj" />
+    <ProjectReference Include="..\Receiver\BatteryParametersReceiver.csproj" />
   </ItemGroup>
 
 </Project>
