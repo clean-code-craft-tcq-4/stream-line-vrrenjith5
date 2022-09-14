@@ -1,4 +1,5 @@
 using System;
+using Xunit;
 using System.Collections.Generic;
 
 namespace BatteryParametersReceiver.Test
