@@ -11,7 +11,7 @@ namespace BatteryParametersReceiver.Test
       {
         string result=BatteryDataReceiver.DisplayData();
         Assert.Equal("Hello",result);                        
-      }
-    }
+      }    
     */
+    }
 }
