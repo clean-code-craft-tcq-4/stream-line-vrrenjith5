@@ -21,7 +21,7 @@ namespace BatteryParametersReceiver
             mMinimum_Charge_value = bmsresult_data.Min(x => x.StateOfCharge);
             mMaximum_Charge_value = bmsresult_data.Max(x => x.StateOfCharge);
             avgerage_last_five_temperature_result = bmsresult_data.Select(p => p.BatteryTemperature).TakeLast(5).Sum(p => p) / 5;
-            avgerage_last_five_charge_result = bmsresult_data.Select(p => p.STateOfCharge).TakeLast(5).Sum(p => p) / 5;
+            avgerage_last_five_charge_result = bmsresult_data.Select(p => p.StateOfCharge).TakeLast(5).Sum(p => p) / 5;
 
             battery_parmeters_statistics_result.Add(mMinimum_Temperature_value);
             battery_parmeters_statistics_result.Add(mMaximum_Temperature_value);
