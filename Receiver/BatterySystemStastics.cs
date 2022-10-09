@@ -13,8 +13,8 @@ namespace BatteryParametersReceiver
             int mMaximum_Temperature_value;
             int mMinimum_Charge_value;
             int mMaximum_Charge_value;
-            int avgerage_last_five_temperature_result;
-            int avgerage_last_five_charge_result;
+            //int avgerage_last_five_temperature_result;
+            //int avgerage_last_five_charge_result;
 
             mMinimum_Temperature_value = bmsresult_data.Min(x => x.BatteryTemperature);
             mMaximum_Temperature_value = bmsresult_data.Max(x => x.BatteryTemperature);
