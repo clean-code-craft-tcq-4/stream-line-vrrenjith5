@@ -21,7 +21,7 @@ namespace BatteryParametersReceiver
                List<int> battery_system_statistics= BatterySystemStastics.ComputeBatteryManagementStastisticsResult(battery_system_info);
                BatterySystemStastics.DisplayBatteryStatisticsOutput(battery_system_statistics);
             }
-            catch(Exception ex)
+            catch(NullReferenceException)
             {
                 throw new Exception("Data passed from sender is Invalid!");
             }
