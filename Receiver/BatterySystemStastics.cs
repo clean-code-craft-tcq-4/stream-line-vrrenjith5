@@ -1,5 +1,5 @@
 using System;
-using System.Core.dll;
+using System.Core;
 using System.Collections.Generic;
 using System.Linq;
 
