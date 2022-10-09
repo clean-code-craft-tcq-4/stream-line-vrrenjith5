@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BatteryParametersReceiver
 {
+    public class BatterySystemStastics
+    {
         public static List<int> ComputeBatteryManagementStastisticsResult(List<BatterySystemParameter> bmsresult_data)
         {
             List<int> battery_parmeters_statistics_result = new List<int>();
@@ -37,4 +40,5 @@ namespace BatteryParametersReceiver
             Console.WriteLine($"Minimum State Of Charge value: {battery_stastics_result[2]},  Maximum State Of Charge value: {battery_stastics_result[3]}");
             Console.WriteLine($"Simple moving Average of last 5 values for Temerature: {battery_stastics_result[4]},  Simple moving Average of last 5 values for State Of Charge: {battery_stastics_result[5]}");
         }
+    }
 }
