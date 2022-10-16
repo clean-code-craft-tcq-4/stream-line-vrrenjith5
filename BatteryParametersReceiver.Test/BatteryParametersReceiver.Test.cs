@@ -8,7 +8,7 @@ namespace BatteryParametersReceiver.Test
     public class BatteryDataReceiverTest
     {
         [Fact]
-        public void ValidateBMSStatisticsResult()
+        public void ValidateBMSStatisticsResultAndDisplay()
         {
             List<string> oBatterySenderInputSample = new List<string>();
             oBatterySenderInputSample.Add("1,2");
@@ -23,7 +23,10 @@ namespace BatteryParametersReceiver.Test
             Assert.Equal(1,battery_statistics_result[0]);
             Assert.Equal(5,battery_statistics_result[1]);
             Assert.Equal(2,battery_statistics_result[2]);
-            Assert.Equal(10,battery_statistics_result[3]);            
+            Assert.Equal(10,battery_statistics_result[3]);       
+	
+	    Assert.True(DisplayBatteryStatisticsOutput(battery_statistics_result));
         }
+	
     }
 }
