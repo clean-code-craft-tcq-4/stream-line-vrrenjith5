@@ -25,7 +25,7 @@ namespace BatteryParametersReceiver.Test
             Assert.Equal(2,battery_statistics_result[2]);
             Assert.Equal(10,battery_statistics_result[3]);       
 	
-	    Assert.True(DisplayBatteryStatisticsOutput(battery_statistics_result));
+	    Assert.True(BatterySystemStastics.DisplayBatteryStatisticsOutput(battery_statistics_result));
         }
 	
     }
