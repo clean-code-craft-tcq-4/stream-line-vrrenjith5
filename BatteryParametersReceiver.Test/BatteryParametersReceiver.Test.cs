@@ -11,11 +11,11 @@ namespace BatteryParametersReceiver.Test
         public void ValidateBMSStatisticsResult()
         {
             List<string> oSenderInputSample = new List<string>();
-            oSenderInputSample.Add("[1,2]");
-            oSenderInputSample.Add("[2,4]");
-            oSenderInputSample.Add("[3,6]");
-            oSenderInputSample.Add("[4,8]");
-            oSenderInputSample.Add("[5,10]");
+            oSenderInputSample.Add("1,2");
+            oSenderInputSample.Add("2,4");
+            oSenderInputSample.Add("3,6");
+            oSenderInputSample.Add("4,8");
+            oSenderInputSample.Add("5,10");
             List<BatterySystemParameter> bms_result=BatterySystemStastics.ComputeBatteryManagementStastisticsResult(oSenderInputSample);            
 	
             Assert.Equal(bms_result[0],1);
