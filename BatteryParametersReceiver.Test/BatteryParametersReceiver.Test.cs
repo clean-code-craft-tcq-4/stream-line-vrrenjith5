@@ -20,10 +20,10 @@ namespace BatteryParametersReceiver.Test
             List<BatterySystemParameter> bms_result=ProcessSenderData.ProcessSenderDataStatistcs(oBatterySenderInputSample);
 	    List<int> battery_statistics_result=BatterySystemStastics.ComputeBatteryManagementStastisticsResult(bms_result);            
 	
-            Assert.Equal(battery_statistics_result[0],1);
-            Assert.Equal(battery_statistics_result[1],5);
-            Assert.Equal(battery_statistics_result[2],2);
-            Assert.Equal(battery_statistics_result[3],10);            
+            Assert.Equal(1,battery_statistics_result[0]);
+            Assert.Equal(5,battery_statistics_result[1]);
+            Assert.Equal(2,battery_statistics_result[2]);
+            Assert.Equal(10,battery_statistics_result[3]);            
         }
     }
 }
