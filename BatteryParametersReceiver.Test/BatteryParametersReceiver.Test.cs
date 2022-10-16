@@ -10,18 +10,20 @@ namespace BatteryParametersReceiver.Test
         [Fact]
         public void ValidateBMSStatisticsResult()
         {
-            List<string> oSenderInputSample = new List<string>();
-            oSenderInputSample.Add("1,2");
-            oSenderInputSample.Add("2,4");
-            oSenderInputSample.Add("3,6");
-            oSenderInputSample.Add("4,8");
-            oSenderInputSample.Add("5,10");
-            List<BatterySystemParameter> bms_result=BatterySystemStastics.ComputeBatteryManagementStastisticsResult(oSenderInputSample);            
+            List<string> oBatterySenderInputSample = new List<string>();
+            oBatterySenderInputSample.Add("1,2");
+            oBatterySenderInputSample.Add("2,4");
+            oBatterySenderInputSample.Add("3,6");
+            oBatterySenderInputSample.Add("4,8");
+            oBatterySenderInputSample.Add("5,10");
+		
+            List<BatterySystemParameter> bms_result=ProcessSenderData.ProcessSenderDataStatistcs(oBatterySenderInputSample);
+	    List<int> battery_statistics_result=BatterySystemStastics.ComputeBatteryManagementStastisticsResult(bms_result);            
 	
-            Assert.Equal(bms_result[0],1);
-            Assert.Equal(bms_result[1],5);
-            Assert.Equal(bms_result[2],2);
-            Assert.Equal(bms_result[3],10);            
+            Assert.Equal(battery_statistics_result[0],1);
+            Assert.Equal(battery_statistics_result[1],5);
+            Assert.Equal(battery_statistics_result[2],2);
+            Assert.Equal(battery_statistics_result[3],10);            
         }
     }
 }
