@@ -34,11 +34,12 @@ namespace BatteryParametersReceiver
             
          }
          
-        public static void DisplayBatteryStatisticsOutput(List<int> battery_stastics_result)
+        public static bool DisplayBatteryStatisticsOutput(List<int> battery_stastics_result)
         {
             Console.WriteLine($"Minimum Temperature value: {battery_stastics_result[0]},  Maximum Temperature value: {battery_stastics_result[1]}");
             Console.WriteLine($"Minimum State Of Charge value: {battery_stastics_result[2]},  Maximum State Of Charge value: {battery_stastics_result[3]}");
             //Console.WriteLine($"Simple moving Average of last 5 values for Temerature: {battery_stastics_result[4]},  Simple moving Average of last 5 values for State Of Charge: {battery_stastics_result[5]}");
+            return true;
         }
     }
 }
