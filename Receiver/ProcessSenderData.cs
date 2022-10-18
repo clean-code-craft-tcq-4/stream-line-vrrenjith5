@@ -17,7 +17,7 @@ namespace BatteryParametersReceiver
                     BatterySystemParameter battery_system_info = new BatterySystemParameter();
                     battery_system_info.BatteryTemperature = Convert.ToInt32(battery_spilt_info[0].Trim());                    
                     battery_system_info.StateOfCharge = Convert.ToInt32(battery_spilt_info[1].Trim());
-                    if(!ValidateBatterySystemTemperatureBoundaries(battery_system_info.BatteryTemperature) Or !ValidateBatterySystemStateOfChargeBoundaries(battery_system_info.StateOfCharge))
+                    if(!ValidateBatterySystemTemperatureBoundaries(battery_system_info.BatteryTemperature) || !ValidateBatterySystemStateOfChargeBoundaries(battery_system_info.StateOfCharge))
                     {
                         IsValidBoudaryData=false;
                         break;
