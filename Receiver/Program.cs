@@ -18,8 +18,8 @@ namespace BatteryParametersReceiver
                     battery_Info_From_Sender_System.Add(Convert.ToString(Console.ReadLine()));
                 }
                List<BatterySystemParameter> battery_system_info = ProcessSenderData.ProcessSenderDataStatistcs(battery_Info_From_Sender_System); 
-               List<int> battery_system_statistics= BatterySystemStastics.ComputeBatteryManagementStastisticsResult(battery_system_info);
-               BatterySystemStastics.DisplayBatteryStatisticsOutput(battery_system_statistics);
+               bool Issystem_parameter_computation_success= BatterySystemStastics.ComputeBatteryManagementStastisticsResult(battery_system_info);
+               bool IsParameterDisplayed=BatterySystemStastics.DisplayBatteryStatisticsOutput();
             }
             catch(NullReferenceException)
             {
