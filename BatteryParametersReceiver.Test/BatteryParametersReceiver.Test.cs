@@ -77,7 +77,7 @@ namespace BatteryParametersReceiver.Test
         {
 		List<string> obattery_parameter_data = new List<string>();
 		List<BatterySystemParameter> bms_result_data=ProcessSenderData.ProcessSenderDataStatistcs(obattery_parameter_data);
-		Assert.Null(obattery_parameter_data);
+		Assert.Null(bms_result_data);
 	}
 	    
     }
