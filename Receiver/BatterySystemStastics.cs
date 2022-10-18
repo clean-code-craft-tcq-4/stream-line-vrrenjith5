@@ -38,7 +38,7 @@ namespace BatteryParametersReceiver
             else
             {
                 return IsStatisticsCompleted;
-            }.            
+            }            
          }
          
         //Method to display the battery system parameters
