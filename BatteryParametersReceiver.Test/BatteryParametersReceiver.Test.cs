@@ -93,7 +93,7 @@ namespace BatteryParametersReceiver.Test
 	
 	//Negative case of failing battery parameter Temperature wrong input
 	[Fact]
-        public void ValidateBatteryTemperatureDataNegativeBoundaries()
+        public void ValidateBatteryTemperatureDataOutofBoundaries()
 	{
 		BatterySystemParameter bms_parameter=new BatterySystemParameter();
 		bms_parameter.BatteryTemperature=200;
@@ -105,21 +105,21 @@ namespace BatteryParametersReceiver.Test
 	{
 		BatterySystemParameter bms_parameter=new BatterySystemParameter();
 		bms_parameter.StateOfCharge=80;
-		Assert.True(BatterySystemParameter.ValidateBatterySystemStateOfChargeBoundaries(bms_parameter.BatteryTemperature));
+		Assert.True(BatterySystemParameter.ValidateBatterySystemStateOfChargeBoundaries(bms_parameter.bms_parameter.StateOfCharge));
 	}
 	
 	//Negative case of failing battery parameter SOC wrong input
 	[Fact]
-        public void ValidateBatterySOCDataNegativeBoundaries()
+        public void ValidateBatterySOCDataOutOfBoundaries()
 	{
 		BatterySystemParameter bms_parameter=new BatterySystemParameter();
 		bms_parameter.StateOfCharge=250;
-		Assert.False(BatterySystemParameter.ValidateBatterySystemStateOfChargeBoundaries(bms_parameter.BatteryTemperature));
+		Assert.False(BatterySystemParameter.ValidateBatterySystemStateOfChargeBoundaries(bms_parameter.bms_parameter.StateOfCharge));
 	}
 			    
 	//Negative case of Failing Battery parameter boundary condition
 	[Fact]
-        public void ValidateSenderDataBoundary()
+        public void ValidateBatterySenderDataBoundary()
         {
             List<string> obatterysampleinfo = new List<string>();
             obatterysampleinfo.Add("1,2");
