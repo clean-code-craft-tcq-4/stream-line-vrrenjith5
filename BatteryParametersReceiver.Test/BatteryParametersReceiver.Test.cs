@@ -63,5 +63,22 @@ namespace BatteryParametersReceiver.Test
 	    bool IsComputationSuccess=BatterySystemStastics.ComputeBatteryManagementStastisticsResult(bms_result);  
 	    Assert.False(BatterySystemStastics.DisplayBatteryStatisticsOutput());
 	}
+	    
+	[Fact]
+        public void FailstoDisplayBMSStatisticsResultinNullCase()
+        {
+		List<string> obattery_system_data = null;
+		List<BatterySystemParameter> bms_result_info=ProcessSenderData.ProcessSenderDataStatistcs(obattery_system_data);
+		Assert.Null(bms_result_info);
+	}
+	
+	[Fact]
+        public void FailstoDisplayBMSStatisticsResultinEmptyData()
+        {
+		List<string> obattery_parameter_data = new List<string>();
+		List<BatterySystemParameter> bms_result_data=ProcessSenderData.ProcessSenderDataStatistcs(obattery_parameter_data);
+		Assert.Null(obattery_parameter_data);
+	}
+	    
     }
 }
