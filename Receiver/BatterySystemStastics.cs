@@ -6,39 +6,47 @@ namespace BatteryParametersReceiver
 {
     public class BatterySystemStastics
     {
-        public static List<int> ComputeBatteryManagementStastisticsResult(List<BatterySystemParameter> bmsresult_data)
+            //Properties Declaration
+                
+            public static int MinimumSystemTemperature { get; set; }
+
+            public static int MaximumSystemTemperature { get; set; }
+
+            public static int MinimumStateOfCharge { get; set; }
+
+            public static int MaximumStateOfCharge { get; set; }
+
+            public static double AverageFiveSystemTemperature { get; set; }
+
+            public static double AverageFiveSystemStateOfCharge { get; set; }
+                        
+        //Method Computes the System Parameter Statistics
+        public static bool ComputeBatteryManagementStastisticsResult(List<BatterySystemParameter> bmsresult_data)
         {
-            List<int> battery_parmeters_statistics_result = new List<int>();
-            int mMinimum_Temperature_value;
-            int mMaximum_Temperature_value;
-            int mMinimum_Charge_value;
-            int mMaximum_Charge_value;
-            int avgerage_last_five_temperature_result;
-            int avgerage_last_five_charge_result;
-
-            mMinimum_Temperature_value = bmsresult_data.Min(x => x.BatteryTemperature);
-            mMaximum_Temperature_value = bmsresult_data.Max(x => x.BatteryTemperature);
-            mMinimum_Charge_value = bmsresult_data.Min(x => x.StateOfCharge);
-            mMaximum_Charge_value = bmsresult_data.Max(x => x.StateOfCharge);
-            avgerage_last_five_temperature_result = bmsresult_data.Select(p => p.BatteryTemperature).TakeLast(5).Sum(p => p) / 5;
-            avgerage_last_five_charge_result = bmsresult_data.Select(p => p.StateOfCharge).TakeLast(5).Sum(p => p) / 5;
-
-            battery_parmeters_statistics_result.Add(mMinimum_Temperature_value);
-            battery_parmeters_statistics_result.Add(mMaximum_Temperature_value);
-            battery_parmeters_statistics_result.Add(mMinimum_Charge_value);
-            battery_parmeters_statistics_result.Add(mMaximum_Charge_value);
-            battery_parmeters_statistics_result.Add(avgerage_last_five_temperature_result);
-            battery_parmeters_statistics_result.Add(avgerage_last_five_charge_result);
-
-            return battery_parmeters_statistics_result;
-            
+            bool IsStatisticsCompleted=false;
+            if(bmsresult_data!=null && bmsresult.Count!=0)
+            {
+                MinimumSystemTemperature = bmsresult_data.Min(x => x.BatteryTemperature);
+                MaximumSystemTemperature = bmsresult_data.Max(x => x.BatteryTemperature);
+                MinimumStateOfCharge = bmsresult_data.Min(x => x.StateOfCharge);
+                MaximumStateOfCharge = bmsresult_data.Max(x => x.StateOfCharge);
+                AverageFiveSystemTemperature = bmsresult_data.Select(p => p.BatteryTemperature).TakeLast(5).Sum(p => p) / 5;
+                AverageFiveSystemStateOfCharge = bmsresult_data.Select(p => p.StateOfCharge).TakeLast(5).Sum(p => p) / 5;         
+                IsStatisticsCompleted=true;
+                return IsStatisticsCompleted;
+            }
+            else
+            {
+                return IsStatisticsCompleted;
+            }.            
          }
          
-        public static bool DisplayBatteryStatisticsOutput(List<int> battery_stastics_result)
+        //Method to display the battery system parameters
+        public static bool DisplayBatteryStatisticsOutput()
         {
-            Console.WriteLine($"Minimum Temperature value: {battery_stastics_result[0]},  Maximum Temperature value: {battery_stastics_result[1]}");
-            Console.WriteLine($"Minimum State Of Charge value: {battery_stastics_result[2]},  Maximum State Of Charge value: {battery_stastics_result[3]}");
-            Console.WriteLine($"Simple moving Average of last 5 values for Temerature: {battery_stastics_result[4]},  Simple moving Average of last 5 values for State Of Charge: {battery_stastics_result[5]}");
+            Console.WriteLine($"Minimum Temperature value: {MinimumSystemTemperature},  Maximum Temperature value: {MaximumSystemTemperature}");
+            Console.WriteLine($"Minimum State Of Charge value: {MinimumStateOfCharge},  Maximum State Of Charge value: {MaximumStateOfCharge}");
+            Console.WriteLine($"Simple moving Average of last 5 values for Temerature: {AverageFiveSystemTemperature},  Simple moving Average of last 5 values for State Of Charge: {AverageFiveSystemStateOfCharge}");
             return true;
         }
     }
