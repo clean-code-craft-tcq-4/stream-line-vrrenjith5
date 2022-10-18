@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace BatteryParametersReceiver
 {
-    public class BatterySystemStastics
+    public static class BatterySystemStastics
     {
             //Properties Declaration
                 
