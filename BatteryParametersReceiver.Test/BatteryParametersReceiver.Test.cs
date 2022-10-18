@@ -62,6 +62,6 @@ namespace BatteryParametersReceiver.Test
             List<BatterySystemParameter> bms_result=ProcessSenderData.ProcessSenderDataStatistcs(oBatterySystemData);
 	    bool IsComputationSuccess=BatterySystemStastics.ComputeBatteryManagementStastisticsResult(bms_result);  
 	    Assert.False(BatterySystemStastics.DisplayBatteryStatisticsOutput());
-	
+	}
     }
 }
