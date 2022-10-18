@@ -93,7 +93,7 @@ namespace BatteryParametersReceiver.Test
 	{
 		BatterySystemParameter bms_parameter=new BatterySystemParameter();
 		bms_parameter.BatteryTemperature=int.MaxValue;
-		Assert.True(BatterySystemParameter.ValidateBatterySystemParameterBoundaries(bms_parameter.BatteryTemperature)
+		Assert.False(BatterySystemParameter.ValidateBatterySystemParameterBoundaries(bms_parameter.BatteryTemperature)
 	}	
 	    
     }
