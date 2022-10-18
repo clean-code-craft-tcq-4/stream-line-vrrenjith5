@@ -13,7 +13,7 @@ namespace BatteryParametersReceiver
         public int StateOfCharge { get; set; }     
         
         //Check the boundary limit of Temperature
-        public bool ValidateBatterySystemTemperatureBoundaries(int parameter)
+        public static bool ValidateBatterySystemTemperatureBoundaries(int parameter)
         {
             if(parameter<TEMP_MAX && parameter > TEMP_MIN)
                 return true;
@@ -22,7 +22,7 @@ namespace BatteryParametersReceiver
         }
         
         //Check the boundary limit of StateOfCharge
-        public bool ValidateBatterySystemStateOfChargeBoundaries(int parameter)
+        public static bool ValidateBatterySystemStateOfChargeBoundaries(int parameter)
         {
             if(parameter<SOC_MAX && parameter > TEMP_MIN)
                 return true;
