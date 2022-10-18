@@ -32,6 +32,36 @@ namespace BatteryParametersReceiver.Test
 	
 	    Assert.True(BatterySystemStastics.DisplayBatteryStatisticsOutput());
         }		
+	    
+	[Fact]
+        public void FailstoComputeBMSStastics()
+        {
+            List<string> oBatterySenderInputSample = new List<string>();
+            oBatterySenderInputSample.Add("1,2");
+            oBatterySenderInputSample.Add("2,4");
+            oBatterySenderInputSample.Add("3,6");
+            oBatterySenderInputSample.Add("4,8");          
+		
+            List<BatterySystemParameter> bms_result=ProcessSenderData.ProcessSenderDataStatistcs(oBatterySenderInputSample);
+	    bool IsComputationSuccess=BatterySystemStastics.ComputeBatteryManagementStastisticsResult(bms_result);            
+		
+	    Assert.False(BatterySystemStastics.ComputeBatteryManagementStastisticsResult(bms_result));    
+	
+	    Assert.False(BatterySystemStastics.DisplayBatteryStatisticsOutput());
+        }	
+	    
+	[Fact]
+        public void FailstoDisplayBMSStatisticsResult()
+        {
+            List<string> oBatterySenderInputSample = new List<string>();
+            oBatterySenderInputSample.Add("1,2");
+            oBatterySenderInputSample.Add("2,4");
+            oBatterySenderInputSample.Add("3,6");
+            oBatterySenderInputSample.Add("4,8");          
+		
+            List<BatterySystemParameter> bms_result=ProcessSenderData.ProcessSenderDataStatistcs(oBatterySenderInputSample);
+	    bool IsComputationSuccess=BatterySystemStastics.ComputeBatteryManagementStastisticsResult(bms_result);  
+	    Assert.False(BatterySystemStastics.DisplayBatteryStatisticsOutput());
 	
     }
 }
