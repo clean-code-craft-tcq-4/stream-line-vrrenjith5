@@ -27,11 +27,11 @@ namespace BatteryParametersReceiver.Test
 		    Assert.Equal(2,BatterySystemStastics.MinimumStateOfCharge);
 		    Assert.Equal(10,BatterySystemStastics.MaximumStateOfCharge);  	
 		    Assert.Equal(3,BatterySystemStastics.AverageFiveSystemTemperature);  	
-		    Assert.Equal(5,BatterySystemStastics.AverageFiveSystemStateOfCharge);  	
+		    Assert.Equal(6,BatterySystemStastics.AverageFiveSystemStateOfCharge);  	
 	    }
 	
 	    Assert.True(BatterySystemStastics.DisplayBatteryStatisticsOutput());
-        }
+        }		
 	
     }
 }
