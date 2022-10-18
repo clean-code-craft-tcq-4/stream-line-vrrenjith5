@@ -29,5 +29,5 @@ jobs:
       run: dotnet build Battery-Parameter-Processor/BatteryParametersReceiver --configuration Debug
       
     - name: Run cmd
-      run: ./testchecker | D:\a\stream-line-vrrenjith5\stream-line-vrrenjith5\\Battery-Parameter-Processor\BatteryParametersReceiver\bin\Debug\netcoreapp3.1\BatteryParametersReceiver.exe
+      run: ./testchecker | D:\a\stream-line-vrrenjith5\stream-line-vrrenjith5\Battery-Parameter-Processor\BatteryParametersReceiver\bin\Debug\netcoreapp3.1\BatteryParametersReceiver.exe
       shell: cmd
