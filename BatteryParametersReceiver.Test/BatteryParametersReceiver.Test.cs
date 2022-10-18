@@ -7,6 +7,7 @@ namespace BatteryParametersReceiver.Test
 {
     public class BatteryDataReceiverTest
     {
+	//Positive case of computing the BMS parameter success and able to display the message
         [Fact]
         public void ValidateBMSStatisticsResultAndDisplay()
         {
@@ -33,6 +34,7 @@ namespace BatteryParametersReceiver.Test
 	    Assert.True(BatterySystemStastics.DisplayBatteryStatisticsOutput());
         }		
 	    
+	//Check the negative case of passing lesser data and computation of statistics paused
 	[Fact]
         public void FailstoComputeBMSStastics()
         {
@@ -43,13 +45,11 @@ namespace BatteryParametersReceiver.Test
             obatterysampleinfo.Add("4,8");          
 		
             List<BatterySystemParameter> bms_result=ProcessSenderData.ProcessSenderDataStatistcs(obatterysampleinfo);
-	    bool IsComputationSuccess=BatterySystemStastics.ComputeBatteryManagementStastisticsResult(bms_result);            
-		
-	    Assert.False(BatterySystemStastics.ComputeBatteryManagementStastisticsResult(bms_result));    
-	
-	    Assert.False(BatterySystemStastics.DisplayBatteryStatisticsOutput());
+	    bool IsComputationSuccess=BatterySystemStastics.ComputeBatteryManagementStastisticsResult(bms_result);            		
+	    Assert.False(BatterySystemStastics.ComputeBatteryManagementStastisticsResult(bms_result));    		    
         }	
 	    
+	//Verify the negative case of lesser input and expecting no display to console
 	[Fact]
         public void FailstoDisplayBMSStatisticsResult()
         {
@@ -64,6 +64,7 @@ namespace BatteryParametersReceiver.Test
 	    Assert.False(BatterySystemStastics.DisplayBatteryStatisticsOutput());
 	}
 	    
+	//Verifying the Null Case condition
 	[Fact]
         public void FailstoDisplayBMSStatisticsResultinNullCase()
         {
@@ -72,6 +73,7 @@ namespace BatteryParametersReceiver.Test
 		Assert.Null(bms_result_info);
 	}
 	
+	//Verifying the Null check on for empty input
 	[Fact]
         public void FailstoDisplayBMSStatisticsResultinEmptyData()
         {
@@ -79,22 +81,52 @@ namespace BatteryParametersReceiver.Test
 		List<BatterySystemParameter> bms_result_data=ProcessSenderData.ProcessSenderDataStatistcs(obattery_parameter_data);
 		Assert.Null(bms_result_data);
 	}
-	    
+	
+	//Positive case of checking battery parameter Temperature input	    
 	[Fact]
-        public void ValidateBatteryDataBoundaries()
+        public void ValidateBatteryTemperatureDataBoundaries()
+	{
+		BatterySystemParameter bms_parameter=new BatterySystemParameter();
+		bms_parameter.BatteryTemperature=140;
+		Assert.True(BatterySystemParameter.ValidateBatterySystemParameterBoundaries(bms_parameter.BatteryTemperature);
+	}
+	
+	//Negative case of failing battery parameter Temperature wrong input
+	[Fact]
+        public void ValidateBatteryTemperatureDataNegativeBoundaries()
 	{
 		BatterySystemParameter bms_parameter=new BatterySystemParameter();
 		bms_parameter.BatteryTemperature=200;
-		Assert.True(BatterySystemParameter.ValidateBatterySystemParameterBoundaries(bms_parameter.BatteryTemperature)
+		Assert.False(BatterySystemParameter.ValidateBatterySystemParameterBoundaries(bms_parameter.BatteryTemperature);
 	}
-	
+	//Positive case of checking battery parameter SOC input		     
 	[Fact]
-        public void ValidateBatteryDataNegativeBoundaries()
+        public void ValidateBatterySOCDataBoundaries()
 	{
 		BatterySystemParameter bms_parameter=new BatterySystemParameter();
-		bms_parameter.BatteryTemperature=int.MaxValue;
-		Assert.False(BatterySystemParameter.ValidateBatterySystemParameterBoundaries(bms_parameter.BatteryTemperature)
-	}	
-	    
+		bms_parameter.BatteryTemperature=80;
+		Assert.True(BatterySystemParameter.ValidateBatterySystemParameterBoundaries(bms_parameter.BatteryTemperature);
+	}
+	
+	//Negative case of failing battery parameter SOC wrong input
+	[Fact]
+        public void ValidateBatterySOCDataNegativeBoundaries()
+	{
+		BatterySystemParameter bms_parameter=new BatterySystemParameter();
+		bms_parameter.BatteryTemperature=250;
+		Assert.False(BatterySystemParameter.ValidateBatterySystemParameterBoundaries(bms_parameter.BatteryTemperature);
+	}
+			    
+	//Negative case of Failing Battery parameter boundary condition
+	[Fact]
+        public void ValidateSenderDataBoundary()
+        {
+            List<string> obatterysampleinfo = new List<string>();
+            obatterysampleinfo.Add("1,2");
+            obatterysampleinfo.Add("2,4");
+            obatterysampleinfo.Add("200,6");
+            obatterysampleinfo.Add("-20,-10");          		
+            List<BatterySystemParameter> bms_result=ProcessSenderData.ProcessSenderDataStatistcs(obatterysampleinfo);
+	    Assert.Null(bms_result)	    
     }
 }
