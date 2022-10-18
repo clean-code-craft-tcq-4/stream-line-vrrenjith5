@@ -24,7 +24,7 @@ namespace BatteryParametersReceiver
         public static bool ComputeBatteryManagementStastisticsResult(List<BatterySystemParameter> bmsresult_data)
         {
             bool IsStatisticsCompleted=false;
-            if(bmsresult_data!=null && bmsresult.Count!=0)
+            if(bmsresult_data!=null && bmsresult_data.Count!=0)
             {
                 MinimumSystemTemperature = bmsresult_data.Min(x => x.BatteryTemperature);
                 MaximumSystemTemperature = bmsresult_data.Max(x => x.BatteryTemperature);
