@@ -105,7 +105,7 @@ namespace BatteryParametersReceiver.Test
 	{
 		BatterySystemParameter bms_parameter=new BatterySystemParameter();
 		bms_parameter.StateOfCharge=80;
-		Assert.True(BatterySystemParameter.ValidateBatterySystemStateOfChargeBoundaries(bms_parameter.bms_parameter.StateOfCharge));
+		Assert.True(BatterySystemParameter.ValidateBatterySystemStateOfChargeBoundaries(bms_parameter.StateOfCharge));
 	}
 	
 	//Negative case of failing battery parameter SOC wrong input
@@ -114,7 +114,7 @@ namespace BatteryParametersReceiver.Test
 	{
 		BatterySystemParameter bms_parameter=new BatterySystemParameter();
 		bms_parameter.StateOfCharge=250;
-		Assert.False(BatterySystemParameter.ValidateBatterySystemStateOfChargeBoundaries(bms_parameter.bms_parameter.StateOfCharge));
+		Assert.False(BatterySystemParameter.ValidateBatterySystemStateOfChargeBoundaries(bms_parameter.StateOfCharge));
 	}
 			    
 	//Negative case of Failing Battery parameter boundary condition
