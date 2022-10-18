@@ -88,7 +88,7 @@ namespace BatteryParametersReceiver.Test
 	{
 		BatterySystemParameter bms_parameter=new BatterySystemParameter();
 		bms_parameter.BatteryTemperature=140;
-		Assert.True(BatterySystemParameter.ValidateBatterySystemParameterBoundaries(bms_parameter.BatteryTemperature));
+		Assert.True(BatterySystemParameter.ValidateBatterySystemTemperatureBoundaries(bms_parameter.BatteryTemperature));
 	}
 	
 	//Negative case of failing battery parameter Temperature wrong input
@@ -97,15 +97,15 @@ namespace BatteryParametersReceiver.Test
 	{
 		BatterySystemParameter bms_parameter=new BatterySystemParameter();
 		bms_parameter.BatteryTemperature=200;
-		Assert.False(BatterySystemParameter.ValidateBatterySystemParameterBoundaries(bms_parameter.BatteryTemperature));
+		Assert.False(BatterySystemParameter.ValidateBatterySystemTemperatureBoundaries(bms_parameter.BatteryTemperature));
 	}
 	//Positive case of checking battery parameter SOC input		     
 	[Fact]
         public void ValidateBatterySOCDataBoundaries()
 	{
 		BatterySystemParameter bms_parameter=new BatterySystemParameter();
-		bms_parameter.BatteryTemperature=80;
-		Assert.True(BatterySystemParameter.ValidateBatterySystemParameterBoundaries(bms_parameter.BatteryTemperature));
+		bms_parameter.StateOfCharge=80;
+		Assert.True(BatterySystemParameter.ValidateBatterySystemStateOfChargeBoundaries(bms_parameter.BatteryTemperature));
 	}
 	
 	//Negative case of failing battery parameter SOC wrong input
@@ -113,8 +113,8 @@ namespace BatteryParametersReceiver.Test
         public void ValidateBatterySOCDataNegativeBoundaries()
 	{
 		BatterySystemParameter bms_parameter=new BatterySystemParameter();
-		bms_parameter.BatteryTemperature=250;
-		Assert.False(BatterySystemParameter.ValidateBatterySystemParameterBoundaries(bms_parameter.BatteryTemperature));
+		bms_parameter.StateOfCharge=250;
+		Assert.False(BatterySystemParameter.ValidateBatterySystemStateOfChargeBoundaries(bms_parameter.BatteryTemperature));
 	}
 			    
 	//Negative case of Failing Battery parameter boundary condition
