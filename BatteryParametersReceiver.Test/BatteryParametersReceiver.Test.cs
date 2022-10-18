@@ -80,5 +80,21 @@ namespace BatteryParametersReceiver.Test
 		Assert.Null(bms_result_data);
 	}
 	    
+	[Fact]
+        public void ValidateBatteryDataBoundaries()
+	{
+		BatterySystemParameter bms_parameter=new BatterySystemParameter();
+		bms_parameter.BatteryTemperature=200;
+		Assert.True(BatterySystemParameter.ValidateBatterySystemParameterBoundaries(bms_parameter.BatteryTemperature)
+	}
+	
+	[Fact]
+        public void ValidateBatteryDataNegativeBoundaries()
+	{
+		BatterySystemParameter bms_parameter=new BatterySystemParameter();
+		bms_parameter.BatteryTemperature=int.MaxValue;
+		Assert.True(BatterySystemParameter.ValidateBatterySystemParameterBoundaries(bms_parameter.BatteryTemperature)
+	}	
+	    
     }
 }
