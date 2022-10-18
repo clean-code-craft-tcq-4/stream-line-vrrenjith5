@@ -36,13 +36,13 @@ namespace BatteryParametersReceiver.Test
 	[Fact]
         public void FailstoComputeBMSStastics()
         {
-            List<string> oBatterySenderInputSample = new List<string>();
-            oBatterySenderInputSample.Add("1,2");
-            oBatterySenderInputSample.Add("2,4");
-            oBatterySenderInputSample.Add("3,6");
-            oBatterySenderInputSample.Add("4,8");          
+            List<string> obatterysampleinfo = new List<string>();
+            obatterysampleinfo.Add("1,2");
+            obatterysampleinfo.Add("2,4");
+            obatterysampleinfo.Add("3,6");
+            obatterysampleinfo.Add("4,8");          
 		
-            List<BatterySystemParameter> bms_result=ProcessSenderData.ProcessSenderDataStatistcs(oBatterySenderInputSample);
+            List<BatterySystemParameter> bms_result=ProcessSenderData.ProcessSenderDataStatistcs(obatterysampleinfo);
 	    bool IsComputationSuccess=BatterySystemStastics.ComputeBatteryManagementStastisticsResult(bms_result);            
 		
 	    Assert.False(BatterySystemStastics.ComputeBatteryManagementStastisticsResult(bms_result));    
@@ -53,13 +53,13 @@ namespace BatteryParametersReceiver.Test
 	[Fact]
         public void FailstoDisplayBMSStatisticsResult()
         {
-            List<string> oBatterySenderInputSample = new List<string>();
-            oBatterySenderInputSample.Add("1,2");
-            oBatterySenderInputSample.Add("2,4");
-            oBatterySenderInputSample.Add("3,6");
-            oBatterySenderInputSample.Add("4,8");          
+            List<string> oBatterySystemData = new List<string>();
+            oBatterySystemData.Add("2,2");
+            oBatterySystemData.Add("2,6");
+            oBatterySystemData.Add("3,6");
+            oBatterySystemData.Add("4,10");          
 		
-            List<BatterySystemParameter> bms_result=ProcessSenderData.ProcessSenderDataStatistcs(oBatterySenderInputSample);
+            List<BatterySystemParameter> bms_result=ProcessSenderData.ProcessSenderDataStatistcs(oBatterySystemData);
 	    bool IsComputationSuccess=BatterySystemStastics.ComputeBatteryManagementStastisticsResult(bms_result);  
 	    Assert.False(BatterySystemStastics.DisplayBatteryStatisticsOutput());
 	
