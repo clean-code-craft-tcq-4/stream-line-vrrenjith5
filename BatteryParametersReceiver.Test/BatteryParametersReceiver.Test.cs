@@ -88,7 +88,7 @@ namespace BatteryParametersReceiver.Test
 	{
 		BatterySystemParameter bms_parameter=new BatterySystemParameter();
 		bms_parameter.BatteryTemperature=140;
-		Assert.True(BatterySystemParameter.ValidateBatterySystemParameterBoundaries(bms_parameter.BatteryTemperature);
+		Assert.True(BatterySystemParameter.ValidateBatterySystemParameterBoundaries(bms_parameter.BatteryTemperature));
 	}
 	
 	//Negative case of failing battery parameter Temperature wrong input
@@ -97,7 +97,7 @@ namespace BatteryParametersReceiver.Test
 	{
 		BatterySystemParameter bms_parameter=new BatterySystemParameter();
 		bms_parameter.BatteryTemperature=200;
-		Assert.False(BatterySystemParameter.ValidateBatterySystemParameterBoundaries(bms_parameter.BatteryTemperature);
+		Assert.False(BatterySystemParameter.ValidateBatterySystemParameterBoundaries(bms_parameter.BatteryTemperature));
 	}
 	//Positive case of checking battery parameter SOC input		     
 	[Fact]
@@ -105,7 +105,7 @@ namespace BatteryParametersReceiver.Test
 	{
 		BatterySystemParameter bms_parameter=new BatterySystemParameter();
 		bms_parameter.BatteryTemperature=80;
-		Assert.True(BatterySystemParameter.ValidateBatterySystemParameterBoundaries(bms_parameter.BatteryTemperature);
+		Assert.True(BatterySystemParameter.ValidateBatterySystemParameterBoundaries(bms_parameter.BatteryTemperature));
 	}
 	
 	//Negative case of failing battery parameter SOC wrong input
@@ -114,7 +114,7 @@ namespace BatteryParametersReceiver.Test
 	{
 		BatterySystemParameter bms_parameter=new BatterySystemParameter();
 		bms_parameter.BatteryTemperature=250;
-		Assert.False(BatterySystemParameter.ValidateBatterySystemParameterBoundaries(bms_parameter.BatteryTemperature);
+		Assert.False(BatterySystemParameter.ValidateBatterySystemParameterBoundaries(bms_parameter.BatteryTemperature));
 	}
 			    
 	//Negative case of Failing Battery parameter boundary condition
@@ -127,6 +127,7 @@ namespace BatteryParametersReceiver.Test
             obatterysampleinfo.Add("200,6");
             obatterysampleinfo.Add("-20,-10");          		
             List<BatterySystemParameter> bms_result=ProcessSenderData.ProcessSenderDataStatistcs(obatterysampleinfo);
-	    Assert.Null(bms_result)	    
+	    Assert.Null(bms_result);
+	}
     }
 }
