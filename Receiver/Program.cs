@@ -4,7 +4,8 @@ using System.Collections.Generic;
 namespace BatteryParametersReceiver
 {
     internal class Program
-    {        
+    {       
+        //Take the Sender output data and process the data to receiver part of Battery System
         static void Main(string[] args)
         {
             const int MaxSenderData = 50;
