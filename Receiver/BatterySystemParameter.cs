@@ -4,6 +4,7 @@ namespace BatteryParametersReceiver
 {
     public class BatterySystemParameter
     {
+        //constant boundary values
         private const int SOC_MIN = 0;
         private const int SOC_MAX = 100;
         private const int TEMP_MIN = -50;
