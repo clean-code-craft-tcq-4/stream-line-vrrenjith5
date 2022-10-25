@@ -12,10 +12,8 @@ vector<int> stateOfChargeValueList;
 
 TEST_CASE("Test 1 : Check whether any random temperature values are generated or not if MAX value = MIN value") {
   temperatureValueList = getTemperatureValues(TEMPERATURE_MAX_VALUE ,TEMPERATURE_MAX_VALUE, READINGS_IN_STREAM);
-  bool isTemperatureBufferEmpty = temperatureValueList.empty();
-  REQUIRE(isTemperatureBufferEmpty == true);
-  int temperatureBufferSize = temperatureValueList.size();
-  REQUIRE(temperatureBufferSize == 0);
+  REQUIRE(temperatureValueList.empty() == true);
+  REQUIRE(temperatureValueList.size() == 0);
 }
 
 TEST_CASE("Test 2 : Check whether any random random State Of Charge values are generated or not if MAX value = MIN value") {
